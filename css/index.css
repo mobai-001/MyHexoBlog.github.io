@@ -182,6 +182,16 @@ template {
 @font-face { font-family:MyFont;
   src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/FZFWZhuZiAYuanJWR.woff2)}
   body{font-family:MyFont!important;}
+
+body {
+  cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
+      default;
+  }
+  a,
+  img {
+      cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
+          default;
+}
 .limit-one-line,
 #article-container .flink .flink-item-name,
 #article-container .flink .flink-item-desc,
