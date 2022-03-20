@@ -178,6 +178,10 @@ template {
 [hidden] {
   display: none
 }
+
+@font-face { font-family:MyFont;
+  src: url(https://storage.cloudconvert.com/tasks/b46327a3-08e6-4e56-88d4-5796ed56a399/FZFWZhuZiAYuanJWR.woff2?AWSAccessKeyId=cloudconvert-production&Expires=1647852272&Signature=A6ONsn72%2B3ZlU3g6aok2RW2jESo%3D&response-content-disposition=attachment%3B%20filename%3D%22FZFWZhuZiAYuanJWR.woff2%22&response-content-type=font%2Fwoff2)}
+  body{font-family:MyFont!important;}
 .limit-one-line,
 #article-container .flink .flink-item-name,
 #article-container .flink .flink-item-desc,
