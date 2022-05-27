@@ -181,7 +181,9 @@ template {
 
 @font-face { font-family:MyFont;
   src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/HanYiJiaShuJian-1.woff2)}
-  body{font-family:MyFont!important;}
+
+@font-face { font-family:CodeFont;
+  src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/JetBrainsMono-Medium-3.woff2)}
 
 body {
   cursor: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/%E6%8C%87%E9%92%882.png),
@@ -1435,7 +1437,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: MyFont;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1716,7 +1718,7 @@ figure.highlight pre .javascript .function {
 #article-container pre,
 #article-container code {
   font-size: 18px;
-  font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+  font-family: CodeFont !important;
 }
 #article-container code {
   padding: 2px 4px;
