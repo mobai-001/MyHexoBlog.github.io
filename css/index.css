@@ -2777,7 +2777,7 @@ h1.page-title + .tag-cloud-list {
 }
 #aside-content #card-toc .toc-percentage {
   float: right;
-  margin-top: -9px;
+  margin-top: -12px;
   color: #a9a9a9;
   font-style: italic;
   font-size: 140%;
