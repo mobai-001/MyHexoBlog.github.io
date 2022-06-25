@@ -179,57 +179,6 @@ template {
   display: none
 }
 
-@font-face { font-family:MyFont;
-  src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/webmo.woff2)}
-
-@font-face { font-family:CodeFont;
-  src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/JetBrainsMono-Medium-3.woff2)}
-
-body {
-  cursor: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/%E6%8C%87%E9%92%882.png),
-      default;
-  }
-  a,
-  img {
-      cursor: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/%E6%8C%87%E9%92%882.png),
-          default;
-}
-
-/* 滚动条 */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: rgba(73, 177, 245, 0.2);
-  border-radius: 2em;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #49b1f5;
-  background-image: -webkit-linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.4) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.4) 75%,
-    transparent 75%,
-    transparent
-  );
-  border-radius: 2em;
-}
-
-::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
-
-::-moz-selection {
-  color: #fff;
-  background-color: #49b1f5;
-}
-
 .limit-one-line,
 #article-container .flink .flink-item-name,
 #article-container .flink .flink-item-desc,
@@ -261,6 +210,7 @@ body {
 }
 .fontawesomeIcon,
 hr:before,
+#article-container a.headerlink:after,
 #article-container h1:before,
 #article-container h2:before,
 #article-container h3:before,
@@ -3838,6 +3788,33 @@ h1.page-title + .tag-cloud-list {
   font-size: 0.9em;
   font-family: Monaco, 'Ubuntu Mono', monospace;
   line-height: 1em;
+}
+#article-container a.headerlink:after {
+  float: right;
+  color: var(--headline-presudo);
+  content: '\f0c1';
+  font-size: 0.95em;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#article-container a.headerlink:hover:after {
+  color: var(--pseudo-hover);
+}
+#article-container h1:hover a.headerlink:after,
+#article-container h2:hover a.headerlink:after,
+#article-container h3:hover a.headerlink:after,
+#article-container h4:hover a.headerlink:after,
+#article-container h5:hover a.headerlink:after,
+#article-container h6:hover a.headerlink:after {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 #article-container ol ol,
 #article-container ul ol,
