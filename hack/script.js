@@ -100,18 +100,18 @@ class Player {
 
             player.heal(player.boosts['StageHeal'])
 
-            game.completeAchievement('Its a UNIX system!');
+            game.completeAchievement('芜湖!');
 
             if(player.collectedRelics.length == 0) {
-                game.completeAchievement('What upgrades?');
+                game.completeAchievement('用得着吗');
             }
 
             if(player.health == 1) {
-                game.completeAchievement('Skin of your teeth');
+                game.completeAchievement('半死半活');
             }
 
             if(player.health == player.maxHealth) {
-                game.completeAchievement('Digital don');
+                game.completeAchievement('妖孽');
             }
 
             if(player.level == game.totalLevels + 1) {
@@ -121,30 +121,30 @@ class Player {
                 enJin.audioController.play('intro')
 
                 if(game.difficulty == 1) {
-                    game.completeAchievement("We're in");
+                    game.completeAchievement("我超棒的");
                 }
 
                 if(game.difficulty == 2) {
-                    game.completeAchievement('I am invincible');
+                    game.completeAchievement('打不过我吧');
                 }
 
                 if(game.difficulty == 3) {
-                    game.completeAchievement('There is no spoon');
+                    game.completeAchievement('我已站在世界之巅');
 
                     if(enjin.utils.seedString == "SKYNET") {
-                        game.completeAchievement('Judgement day prevented');
+                        game.completeAchievement('阻止审判日');
                     }
 
                     if(enjin.utils.seedString == "NASA") {
-                        game.completeAchievement('McKinnon would be proud');
+                        game.completeAchievement('可以准备后事了');
                     }
 
                     if(enjin.utils.seedString == "TREADSTONE") {
-                        game.completeAchievement('Bourne to do this');
+                        game.completeAchievement('你要小心了');
                     }
 
                     if(enjin.utils.seedString == "HAL9000") {
-                        game.completeAchievement("I'm sorry, Dave");
+                        game.completeAchievement("还是人么");
                     }
                 }
             }
@@ -156,7 +156,7 @@ class Player {
 
     // Utility function to heal player. Allows you to specify the amount as a percentage so long as percentage param = true. Rest parameter means the heal is at a rest site
     heal(amount, percentage = false, rest = false) {
-        game.completeAchievement('Top up');
+        game.completeAchievement('加满!');
         enJin.audioController.play('heal'); // Play heal audio
         this.health += !percentage ? amount : Math.ceil((this.maxHealth / 100) * amount); // Add value to health
         this.health = this.health > this.maxHealth ? this.maxHealth : this.health; // Clamp health
@@ -173,15 +173,15 @@ class Player {
         this.health = this.health > this.maxHealth ? this.maxHealth : this.health; // Clamp health to max
 
         if(this.maxHealth >= 40) {
-            game.completeAchievement('Absolute unit');
+            game.completeAchievement('比城墙还厚');
         }
 
         if(this.maxHealth >= 70) {
-            game.completeAchievement('Fort Knox');
+            game.completeAchievement('量子之盾');
         }
 
         if(this.maxHealth <= 5) {
-            game.completeAchievement('Who needs health');
+            game.completeAchievement('作死');
         }
 
         if(rest) { // If at a rest site.
@@ -297,7 +297,7 @@ class Game {
         // I really don't know why we need to do this...but we do
         setTimeout(function() {
             if(enJin.utils.seedString == 'CIA' || enJin.utils.seedString == 'cia') {
-                game.completeAchievement('Snowden');
+                game.completeAchievement('斯诺登');
             }
         },10)
 
@@ -376,7 +376,7 @@ class Card {
                 this.deactivate(); // Deactivate this card
                 player.currency -= this.cost; // Deduct the cost of this card from the players currency
                 this.interact();
-                game.completeAchievement('I know Kung Fu');
+                game.completeAchievement('我会打酱油的好吧');
 
                 this.bought = true;
             } else {
@@ -386,7 +386,7 @@ class Card {
                     player.currency -= this.cost; // Deduct the cost of this card from the players currency
                     this.deactivate(); // Deactivate this card
                     createDraggables(); // Re-initialise draggable elements
-                    game.completeAchievement('I know Kung Fu');
+                    game.completeAchievement('我会打酱油的好吧');
                     this.bought = true;
                 } else {
                     enJin.audioController.play('invalid');
@@ -406,7 +406,7 @@ class Card {
             this.attack = this.baseAttack + player.boosts[this.name];
 
             if(this.attack >= 9) {
-                game.completeAchievement('Maximum penetration');
+                game.completeAchievement('超级穿透');
             }
         }
 
@@ -420,7 +420,7 @@ class Card {
             this.maxDefence = this.baseDefence + player.boosts[this.name]
 
             if(this.defence >= 12) {
-                game.completeAchievement('Impenetrable');
+                game.completeAchievement('你破得了吗');
             }
         }
 
@@ -518,7 +518,7 @@ class CurrencyCard extends Card {
         super(); // Inherit methods from parent card class
         this.name = 'Data'; // The name of our currency. Globally set
         this.amount = amount; // Currency amount
-        this.description = 'Click to collect. Spend on the dark web'
+        this.description = '点击获得数据点'
     }
 
     // Generic card interaction when in stage deck
@@ -529,15 +529,15 @@ class CurrencyCard extends Card {
         player.move(); // Move the player
 
         if(player.currency >= 30) {
-            game.completeAchievement('Gigabyte');
+            game.completeAchievement('GB!');
         }
 
         if(player.currency >= 100) {
-            game.completeAchievement('Terabyte');
+            game.completeAchievement('TB!');
         }
 
         if(player.currency >= 250) {
-            game.completeAchievement('Petabyte');
+            game.completeAchievement('PB!');
         }
     }
 }
@@ -550,7 +550,7 @@ class NodeCard extends Card {
         this.dataAmount = enJin.utils.seedRandomBetween(4, 10);
         this.dataAmount = Math.ceil((this.dataAmount / 100) * player.boosts['Data']) + this.dataAmount;
         this.type = 'node';
-        this.description = 'Use a data miner on this to extract the data';
+        this.description = '使用数据挖掘器来获得数据点,直接点击则跳过';
     }
 
     interact() {
@@ -567,7 +567,7 @@ class MineCard extends Card {
         this.name = 'Data miner'; // Location name
         this.type = 'mine';
         this.cost = 10;
-        this.description = 'Use this on a node to mine its data';
+        this.description = '把它用在一个数据节点上来获得数据点';
     }
 
     interact() {
@@ -578,7 +578,7 @@ class MineCard extends Card {
 
     mine(node) {
         let value = dungeonDeck[node].dataAmount;
-        game.completeAchievement('Mine, all mine');
+        game.completeAchievement('我的,都是我的');
         dungeonDeck[node].interact();
 
         enJin.audioController.play('mine');
@@ -586,7 +586,7 @@ class MineCard extends Card {
         player.currency += value; // Increase the players currency by amount
 
         if(value >= 14) {
-            game.completeAchievement('Jackpot');
+            game.completeAchievement('头奖');
         }
 
         if(player.currency >= 30) {
@@ -652,7 +652,7 @@ class RelicCard extends Card {
         }
 
         if(this.name == "Quantum processor") {
-            game.completeAchievement('Dictionary attack');
+            game.completeAchievement('字典攻击');
         }
 
         player.hand.forEach(function(t) {
@@ -683,23 +683,23 @@ class RelicCard extends Card {
         }
 
         if(player.collectedRelics.length >= 5) {
-            game.completeAchievement('Script kiddy')
+            game.completeAchievement('脚本小子')
         }
 
         if(player.collectedRelics.length >= 10) {
-            game.completeAchievement('Red hat')
+            game.completeAchievement('小红帽')
         }
 
         if(player.collectedRelics.length >= 15) {
-            game.completeAchievement('Black hat')
+            game.completeAchievement('小黑帽')
         }
 
         if(player.collectedRelics.length >= 20) {
-            game.completeAchievement('Elite hacker')
+            game.completeAchievement('大精英')
         }
 
         if(player.maxInventory >= 8) {
-            game.completeAchievement('Kitted')
+            game.completeAchievement('装备齐全')
         }
     }
 }
@@ -709,7 +709,7 @@ class ShopCard extends Card {
     constructor() {
         super();
         this.name = 'Tor Browser';
-        this.description = 'Download new software'
+        this.description = '花钱买些东西'
     }
 
     openShop(index) {
@@ -739,7 +739,7 @@ class RestCard extends Card {
     constructor() {
         super();
         this.name = 'Enumerate';
-        this.description = 'Improve your integrity'
+        this.description = '奇遇!'
     }
 
     openRest() {
@@ -792,30 +792,30 @@ class EnemyCard extends Card {
             game.showintents = false;
             this.deactivate(); // Deactivate this enemy
             enJin.audioController.play('enemyKilled');
-            game.completeAchievement('One down');
+            game.completeAchievement('首杀');
 
             if(this.name == "Data Center") {
-                game.completeAchievement('Data dump');
+                game.completeAchievement('你的数据,归我了');
             }
 
             if(this.name == "Security beacon") {
-                game.completeAchievement('Not so secure');
+                game.completeAchievement('真不安全');
             }
 
             if(this.name == "Mainframe") {
-                game.completeAchievement('My kung fu is stronger');
+                game.completeAchievement('我比你专业');
             }
 
             if(this.name == "Antivirus") {
-                game.completeAchievement('Antivirus down');
+                game.completeAchievement('反反病毒');
             }
 
             if(this.name == "Firewall") {
-                game.completeAchievement('Through the fire and flame');
+                game.completeAchievement('穿过火焰!');
             }
 
             if(this.name == "Server") {
-                game.completeAchievement('Youve been served');
+                game.completeAchievement('你被服务了');
             }
 
             if(!this.drop) { // If this enemy does not have a drop, move to next card
@@ -854,13 +854,13 @@ class EnemyCard extends Card {
             player.fleshDamage = attack;
 
             if(player.fleshDamage >= 10) {
-                game.completeAchievement('They are on to you');
+                game.completeAchievement('敌人在哭泣');
             }
         }
 
         // Death check
         if(player.health <= 0) {
-            game.completeAchievement('n00b');
+            game.completeAchievement('不!');
             enJin.audioController.setFrequency(game.lowerFrequency);
             player.alive = false; // Set the player alive flag
         }

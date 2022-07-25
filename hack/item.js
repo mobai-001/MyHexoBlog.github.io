@@ -592,7 +592,7 @@ const relicCards = [
 {
   name: 'NVMes',
   type: 'relic',
-  description: 'Defrag replenishes 的回复量加 2',
+  description: '碎片整理 的回复量加 2',
   targets: ['player.boosts["Defrag"]'],
   affects: 0,
   affectGroup: "healthCards",
@@ -602,7 +602,7 @@ const relicCards = [
 {
   name: 'Distcc',
   type: 'relic',
-  description: 'Recompiling replenishes 的回复量加 2',
+  description: '复编译 的回复量加 2',
   targets: ['player.boosts["Recompile"]'],
   operator: ['+='],
   affects: 1,
@@ -612,7 +612,7 @@ const relicCards = [
 {
   name: 'Advanced IDEs',
   type: 'relic',
-  description: 'Debug replenishes 的回复量加 2',
+  description: '调试器 的回复量加 2',
   targets: ['player.boosts["Debug"]'],
   affects: 2,
   affectGroup: "healthCards",
@@ -652,7 +652,7 @@ const startingCards = [
 
 const achievements = [
 {
-  name: '最大攻击力',
+  name: '超级穿透',
   description: '让任意攻击性卡片的攻击力提升 9 或更多' },
 
 {
@@ -661,154 +661,150 @@ const achievements = [
 
 {
   name: '脚本小子',
-  description: '在一次游戏中收集 5 次升级' },
+  description: '在一次游戏中收集 5 次强化' },
 
 {
-  name: 'Red hat',
-  description: 'Collect 10 upgrades in one run' },
+  name: '小红帽',
+  description: '在一次游戏中收集 10 次强化' },
 
 {
-  name: 'Black hat',
-  description: 'Collect 15 upgrades in one run' },
+  name: '小黑帽',
+  description: '在一次游戏中收集 15 次强化' },
 
 {
-  name: 'Elite hacker',
-  description: 'Collect 20 upgrades in one run' },
+  name: '大精英',
+  description: '在一次游戏中收集 20 次强化' },
 
 {
-  name: 'Impenetrable',
-  description: 'Get any firewall module to 12 or more resistance' },
+  name: '你破得了吗',
+  description: '让任意防火墙模块的防御值大于等于 12' },
 
 {
-  name: 'Gigabyte',
-  description: 'Collect 30 or more data' },
+  name: 'GB!',
+  description: '获得 30 或以上个数据点' },
 
 {
-  name: 'Teabyte',
-  description: 'Collect 100 or more data' },
+  name: 'TB!',
+  description: '获得 100 或以上个数据点' },
 
 {
-  name: 'Petabyte',
-  description: 'Collect 150 or more data' },
+  name: 'PB!',
+  description: '获得 150 或以上个数据点' },
 
 {
-  name: 'Mine, all mine',
-  description: 'Mine a network node' },
+  name: '我的,都是我的',
+  description: '挖掘一个数据节点' },
 
 {
-  name: 'One down',
-  description: 'Terminate a node' },
+  name: '首杀',
+  description: '黑入一个节点' },
 
 {
-  name: 'Top up',
-  description: 'Heal yourself' },
+  name: '加满!',
+  description: '治愈你自己' },
 
 {
-  name: 'n00b',
-  description: 'Get detected' },
+  name: '不!',
+  description: '游戏失败' },
 
 {
-  name: 'Its a UNIX system!',
-  description: 'Complete a stage' },
+  name: '芜湖!',
+  description: '完成一个关卡' },
 
 {
-  name: 'What upgrades?',
-  description: 'Complete a stage with no upgrades' },
+  name: '用得着吗',
+  description: '不使用任何一个增强并完成一个关卡' },
 
 {
-  name: 'Jackpot',
-  description: 'Mine a node worth 14 or more data' },
+  name: '头奖',
+  description: '挖掘一个含 14 个或以上数据点的节点' },
 
 {
-  name: 'Kitted',
-  description: 'Have a max tech deck capacity of 8 or more' },
+  name: '装备齐全',
+  description: '最大技术平台卡片容量增加到 8 或更多' },
 
 {
-  name: 'Data dump',
-  description: 'Hack a Data Center' },
+  name: '你的数据,归我了',
+  description: '入侵数据中心' },
 
 {
-  name: 'Not so secure',
-  description: 'Hack a Security beacon' },
+  name: '真不安全',
+  description: '黑入安全警示器' },
 
 {
-  name: 'My kung fu is stronger',
-  description: 'Hack a Mainframe' },
+  name: '我比你专业',
+  description: '黑入专业主机' },
 
 {
-  name: 'Antivirus down',
-  description: 'Hack an Antivirus' },
+  name: '反反病毒',
+  description: '黑入杀毒软件' },
 
 {
-  name: 'Through the fire and flame',
-  description: 'Hack a Firewall' },
+  name: '穿过火焰!',
+  description: '黑入防火墙' },
 
 {
-  name: 'Youve been served',
-  description: 'Hack a Server' },
+  name: '你被服务了',
+  description: '黑入服务器' },
 
 {
-  name: 'Piece of cake',
-  description: 'Hack a Subnet' },
+  name: "我超棒的",
+  description: '成功在简单模式下通关' },
 
 {
-  name: "We're in",
-  description: 'Successfully hack an easy target' },
+  name: '打不过我吧',
+  description: '成功在中等模式下通关' },
 
 {
-  name: 'I am invincible',
-  description: 'Successfully hack a medium target' },
+  name: '我已站在世界之巅',
+  description: '成功在困难模式下通关' },
 
 {
-  name: 'There is no spoon',
-  description: 'Successfully hack a hard target' },
+  name: '我会打酱油的好吧',
+  description: '买一个东西' },
 
 {
-  name: 'I know Kung Fu',
-  description: 'Download something from the dark web' },
+  name: '字典攻击',
+  description: '增加卡片攻击力' },
 
 {
-  name: 'Dictionary attack',
-  description: 'Increase your Brute Force penetration' },
+  name: '比城墙还厚',
+  description: '最大完整度为 40 或以上' },
 
 {
-  name: 'Absolute unit',
-  description: 'Have a max integrity of 40 or more' },
+  name: '量子之盾',
+  description: '最大完整度为 70 或以上' },
 
 {
-  name: 'Fort Knox',
-  description: 'Have a max integrity of 70 or more' },
+  name: '敌人在哭泣',
+  description: '一次攻击造成 10 点或以上伤害' },
 
 {
-  name: 'They are on to you',
-  description: 'Take more than 10 damage in one hit' },
+  name: '半死半活',
+  description: '在只剩 1 点完整度的情况下完成一个关卡' },
 
 {
-  name: 'Skin of your teeth',
-  description: 'Complete a stage with just 1 integrity remaining' },
+  name: '妖孽',
+  description: '在完整度全满的情况下完成一个关卡' },
 
 {
-  name: 'Digital don',
-  description: 'Complete a stage with full integrity' },
-
-{
-  name: 'Who needs health',
-  description: 'Reduce your max integrity to 5 or below' },
+  name: '作死',
+  description: '将最大完整度降到 5 或以下' },
 
 
 // seed specific
 {
-  name: 'McKinnon would be proud',
-  description: 'Successfully hack NASA on hard' },
+  name: '可以准备后事了',
+  description: '黑入 NASA' },
 
 {
-  name: 'Bourne to do this',
-  description: 'Successfully hack TREADSTONE on hard' },
+  name: '你要小心了',
+  description: '黑入 TREADSTONE' },
 
 {
-  name: 'Judgement day prevented',
-  description: 'Successfully hack SKYNET on hard' },
+  name: '阻止审判日',
+  description: '黑入 SkyNet' },
 
 {
-  name: "I'm sorry, Dave",
-  description: 'Successfully hack HAL9000 on hard' }];
+  name: "还是人么",
+  description: '黑入 HAL9000' }];

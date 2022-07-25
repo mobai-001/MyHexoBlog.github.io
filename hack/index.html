@@ -220,10 +220,10 @@
                 <path clip-rule='evenodd' d='M4.15132 11.4688L11.2171 18.5329C11.3991 18.7148 11.5012 18.9615 11.5012 19.2188C11.5012 19.476 11.3991 19.7227 11.2171 19.9046C11.0352 20.0865 10.7885 20.1887 10.5313 20.1887C10.274 20.1887 10.0273 20.0865 9.8454 19.9046L1.12665 11.1859C1.03643 11.0959 0.964855 10.989 0.916018 10.8713C0.86718 10.7536 0.842041 10.6274 0.842041 10.5C0.842041 10.3726 0.86718 10.2464 0.916018 10.1287C0.964855 10.011 1.03643 9.90412 1.12665 9.81413L9.8454 1.09538C10.0273 0.913473 10.274 0.811279 10.5313 0.811279C10.7885 0.811279 11.0352 0.913473 11.2171 1.09538C11.3991 1.27728 11.5012 1.524 11.5012 1.78125C11.5012 2.03851 11.3991 2.28522 11.2171 2.46713L4.15132 9.53125H22.1562C22.4132 9.53125 22.6596 9.63332 22.8413 9.81499C23.0229 9.99667 23.125 10.2431 23.125 10.5C23.125 10.7569 23.0229 11.0033 22.8413 11.185C22.6596 11.3667 22.4132 11.4688 22.1562 11.4688H4.15132Z' fill-rule='evenodd' fill='#fff'></path>
               </svg>
             </h4>
-            <button @click="enJin.audioController.play('openShop'), game.setAchievements(), achievements = JSON.parse(localStorage.getItem('achievements'))" @mouseenter="enJin.audioController.play('cardHover')" class='hack bg-white'>Reset</button>
+            <button @click="enJin.audioController.play('openShop'), game.setAchievements(), achievements = JSON.parse(localStorage.getItem('achievements'))" @mouseenter="enJin.audioController.play('cardHover')" class='hack bg-white'>重置</button>
           </div>
           <div class='flex justify-between mb-24'>
-            <h2>Achievements</h2>
+            <h2>成就</h2>
             <div class='text-white flex w-12 items-end'>
               <span class='text-2xl'>{{ getAchievementCount() }}</span>
               <span class='text-lightgrey text-md'>/{{ achievements.length }}</span>
@@ -298,7 +298,7 @@
     <div class='game_shop__cards flex gap-4'>
       <div :class="{'opacity-20 pointer-events-none': player.shopCards[index].cost &gt; player.currency || card.bought}" :data-index='index' class='relative' v-for='(card, index) in player.shopCards'>
         <div class='bought absolute z-10 top-0' v-if='card.bought'>
-          Downloaded
+          已购买
         </div>
         <div :class='`card--${card.type}`' class='slot'>
           <div @click='player.shopCards[index].buy()' @mouseenter="enJin.audioController.play('cardHover')" class='card flex justify-center flex-col items-center relative'>
@@ -395,9 +395,9 @@
         </div>
       </div>
     </div>
-    <h4 class='text-2xl mb-8 text-red-600 absolute bottom-20 deckLimit' v-if='player.maxHandWarning'>Tech deck at capacity</h4>
+    <h4 class='text-2xl mb-8 text-red-600 absolute bottom-20 deckLimit' v-if='player.maxHandWarning'>技术平台容量已满</h4>
     <div class='game_shop__exit mt-12'>
-      <button @click="dungeonDeck[player.shopIndex].closeShop(), enJin.audioController.play('take')" class='hack bg-white'>Close browser</button>
+      <button @click="dungeonDeck[player.shopIndex].closeShop(), enJin.audioController.play('take')" class='hack bg-white'>关闭</button>
     </div>
     <div @click='game.shopMinimized = !game.shopMinimized' class='game_minimize uppercase text-white'>
       <span v-if='!game.shopMinimized'>Minimize</span>
@@ -405,8 +405,8 @@
     </div>
   </div>
   <div :class="{'active': player.resting}" class='game_enumerate flex flex-col h-screen items-center justify-center'>
-    <h2 class='text-3xl text-white w-full text-center mb-1'>Enumerate</h2>
-    <h5 class='text-lg text-white w-full text-center mb-12 text-description'>Make a choice</h5>
+    <h2 class='text-3xl text-white w-full text-center mb-1'>奇遇</h2>
+    <h5 class='text-lg text-white w-full text-center mb-12 text-description'>做个选择</h5>
     <div>
       <div class='flex gap-2 items-center flex mb-20'>
         <img class='h-5' src='https://assets.codepen.io/217233/hack-integrityicon.png'>
@@ -424,7 +424,7 @@
           <path d='M32.4 7.2C32.4 5.2146 30.7854 3.6 28.8 3.6H25.2V0H21.6V3.6H14.4V0H10.8V3.6H7.2C5.2146 3.6 3.6 5.2146 3.6 7.2V10.8H0V14.4H3.6V21.6H0V25.2H3.6V28.8C3.6 30.7854 5.2146 32.4 7.2 32.4H10.8V36H14.4V32.4H21.6V36H25.2V32.4H28.8C30.7854 32.4 32.4 30.7854 32.4 28.8V25.2H36V21.6H32.4V14.4H36V10.8H32.4V7.2ZM7.2 28.8V7.2H28.8L28.8036 28.8H7.2Z' fill='#00FFC2'></path>
         </svg>
         <h4 class='text-2xl text-white w-full mb-1'>Recover</h4>
-        <p class='text-description'>Recover {{player.restHealPercentage}}% of your integrity points</p>
+        <p class='text-description'>恢复 {{player.restHealPercentage}}% 完整度</p>
       </div>
       <div @click="player.adjustMaxHealth(player.restMaxHealthIncrease, false, true), enJin.audioController.play('take')" @mouseenter="enJin.audioController.play('cardHover')" class='w-60 cursor-pointer p-3 selection text-center flex flex-col justify-center items-center'>
         <svg class='h-8 mb-2' fill='none' height='36' viewbox='0 0 36 36' width='36' xmlns='http://www.w3.org/2000/svg'>
@@ -432,7 +432,7 @@
           <path d='M32.4 7.2C32.4 5.2146 30.7854 3.6 28.8 3.6H25.2V0H21.6V3.6H14.4V0H10.8V3.6H7.2C5.2146 3.6 3.6 5.2146 3.6 7.2V10.8H0V14.4H3.6V21.6H0V25.2H3.6V28.8C3.6 30.7854 5.2146 32.4 7.2 32.4H10.8V36H14.4V32.4H21.6V36H25.2V32.4H28.8C30.7854 32.4 32.4 30.7854 32.4 28.8V25.2H36V21.6H32.4V14.4H36V10.8H32.4V7.2ZM7.2 28.8V7.2H28.8L28.8036 28.8H7.2Z' fill='#00FFC2'></path>
         </svg>
         <h4 class='text-2xl text-white w-full mb-1'>Fortify</h4>
-        <p class='text-description'>Gain +{{player.restMaxHealthIncrease}} max integrity</p>
+        <p class='text-description'>增加 +{{player.restMaxHealthIncrease}} 最大生命值</p>
       </div>
     </div>
   </div>
@@ -548,7 +548,7 @@
         </div>
       </div>
       <div class='game_shop__exit mt-12 m-auto text-center'>
-        <button @click="player.stageComplete = !player.stageComplete, generateDungeonDeck(16), enJin.audioController.play('take')" class='hack skip bg-white'>Skip</button>
+        <button @click="player.stageComplete = !player.stageComplete, generateDungeonDeck(16), enJin.audioController.play('take')" class='hack skip bg-white'>我都不想要,跳过</button>
       </div>
       <div @click='game.endstageMinimized = !game.endstageMinimized' class='game_minimize uppercase text-white'>
         <span v-if='!game.endstageMinimized'>Minimize</span>
@@ -580,29 +580,29 @@
     <svg class='h-16 mb-2' fill='none' height='50' viewbox='0 0 22 22' width='50' xmlns='http://www.w3.org/2000/svg'>
       <path clip-rule='evenodd' d='M9.88187 2.91315C10.3425 1.99184 11.6573 1.99184 12.1179 2.91315L19.8819 18.441C20.2974 19.2721 19.6931 20.25 18.7638 20.25H3.23597C2.30674 20.25 1.70237 19.2721 2.11794 18.441L9.88187 2.91315ZM13.4596 2.24233C12.4461 0.215447 9.55367 0.215447 8.54023 2.24233L0.776295 17.7702C-0.137944 19.5987 1.19167 21.75 3.23597 21.75H18.7638C20.8081 21.75 22.1377 19.5987 21.2235 17.7702L13.4596 2.24233ZM11.5583 14.0035L12.3246 7.48978C12.4179 6.6968 11.7984 6.00005 10.9999 6.00005C10.2015 6.00005 9.58187 6.6968 9.67516 7.48978L10.4415 14.0035C10.4748 14.2866 10.7148 14.5 10.9999 14.5C11.285 14.5 11.525 14.2866 11.5583 14.0035ZM11.9999 17C11.9999 17.5523 11.5522 18 10.9999 18C10.4476 18 9.9999 17.5523 9.9999 17C9.9999 16.4477 10.4476 16 10.9999 16C11.5522 16 11.9999 16.4477 11.9999 17Z' fill-rule='evenodd' fill='#00FFC2'></path>
     </svg>
-    <h2 class='text-3xl text-white w-full text-center mb-1'>Detected</h2>
-    <h4 class='text-lg text-white w-full text-center text-description'>It's game over man...game over!</h4>
+    <h2 class='text-3xl text-white w-full text-center mb-1'>你被发现了</h2>
+    <h4 class='text-lg text-white w-full text-center text-description'>游戏结束了,Bro...游戏结束了!</h4>
     <div class='detected'>
       <h5 class='text-2xl text-white w-full text-center mt-12 mb-1 text-green'>
-        You failed on stage {{player.level}} of {{game.totalLevels}}
+        你败在了第 {{player.level}} 关
       </h5>
       <div class='div text-white mb-12 flex flex-col justify-center text-center'>
         <span>
-          Game seed:
+          游戏种子:
           <span class='text-green'>{{enJin.utils.seedString}}</span>
         </span>
         <span class='text-white'>
-          Difficulty:
-          <span class='text-green'>{{ game.difficulty == 1 ? 'Easy' : game.difficulty == 2 ? 'Normal' : 'Hard' }}</span>
+          游戏难度:
+          <span class='text-green'>{{ game.difficulty == 1 ? '简单' : game.difficulty == 2 ? '中等' : '困难' }}</span>
         </span>
       </div>
     </div>
     <div class='flex flex-col'>
       <h3 @click="enJin.audioController.play('take'), game.restart()" @mouseenter="enJin.audioController.play('cardHover')" class='text-2xl text-white w-full text-center mb-2 px-12'>
-        Try again
-        <span class='text-sm'>(Same seed)</span>
+        我不服!我要再来!
+        <span class='text-sm'>(同一个游戏种子)</span>
       </h3>
-      <h3 @click="enJin.audioController.play('take'), game.restart(), game.mainMenu = true, game.gameCreation = false" @mouseenter="enJin.audioController.play('cardHover')" class='text-2xl text-white w-full text-center px-12'>Abandon</h3>
+      <h3 @click="enJin.audioController.play('take'), game.restart(), game.mainMenu = true, game.gameCreation = false" @mouseenter="enJin.audioController.play('cardHover')" class='text-2xl text-white w-full text-center px-12'>回到主页</h3>
     </div>
   </div>
   <div class='div flex items-center h-screen relative -top-24 constrain'>
@@ -929,7 +929,7 @@
         </div>
       </div>
       <div class='game_stage__bottom pt-24 relative'>
-        <h4 class='text-2xl mb-8 text-red-600 absolute top-12 deckLimit' v-if='player.maxHandWarning'>Tech deck at capacity</h4>
+        <h4 class='text-2xl mb-8 text-red-600 absolute top-12 deckLimit' v-if='player.maxHandWarning'>技术平台容量已满</h4>
         <div class='flex justify-between w-full gap-8'>
           <div class='w-full'>
             <div class='gsc_hand flex flex-col'>
