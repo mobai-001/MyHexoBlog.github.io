@@ -65,3 +65,7 @@ body {
   color: #fff;
   background-color: #49b1f5;
 }
+
+iframe#My_Vidio_Player {
+  border-radius: 20px;
+}
