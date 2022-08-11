@@ -1,7 +1,7 @@
 function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 class CardProfile extends React.Component {constructor(...args) {super(...args);_defineProperty(this, "state",
     {
-      index: 3,
+      index: 0,
       currentTime: '0:00',
       musicList: [{ name: '鲤 - 主', author: '鲤(Game)', img: '/MyHexoBlog.github.io/music/index/KOI/KOI-ICON.png', audio: '/MyHexoBlog.github.io/music/index/KOI/credit.mp3', duration: '1:15' },
       { name: '鲤 - Level - 1', author: '鲤(Game)', img: '/MyHexoBlog.github.io/music/index/KOI/KOI-ICON.png', audio: '/MyHexoBlog.github.io/music/index/KOI/level1.mp3', duration: '1:36' },
