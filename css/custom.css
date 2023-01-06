@@ -16,18 +16,18 @@ canvas:not(#ribbon-canvas), #web_bg {
 
 
 @font-face { font-family:MyFont;
-  src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/webmo.woff2)}
+  src: url(https://cdn.jsdelivr.net/gh/mobai-001/MyHexoBlog.github.io@gh-pages/webmo.woff2)}
 
 @font-face { font-family:CodeFont;
-  src: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/JetBrainsMono-Medium-3.woff2)}
+  src: url(https://cdn.jsdelivr.net/gh/mobai-001/MyHexoBlog.github.io@gh-pages/JetBrainsMono-Medium-3.woff2)}
 
 body {
-  cursor: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/%E6%8C%87%E9%92%882.png),
+  cursor: url(https://cdn.jsdelivr.net/gh/mobai-001/MyHexoBlog.github.io@gh-pages/%E6%8C%87%E9%92%882.png),
       default;
   }
   a,
   img {
-      cursor: url(https://raw.githubusercontent.com/mobai-001/MyHexoBlog.github.io/gh-pages/%E6%8C%87%E9%92%882.png),
+      cursor: url(https://cdn.jsdelivr.net/gh/mobai-001/MyHexoBlog.github.io@gh-pages/%E6%8C%87%E9%92%882.png),
           default;
 }
 
